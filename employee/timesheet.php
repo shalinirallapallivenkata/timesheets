@@ -111,6 +111,8 @@ foreach ($timecode_desc as $time) {
                     <input type="text" placeholder="8.00"  name="h" required>
                 </div></td>
             </td>
+
+
             <td>
                 <div class="col-sm-3" >
                     <input type="text" name="total">
