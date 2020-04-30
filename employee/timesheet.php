@@ -112,6 +112,7 @@ foreach ($timecode_desc as $time) {
                 </div></td>
             </td>
             <td>
+
                 <div class="col-sm-3" >
                     <input type="text" name="total">
                 </div></td>
