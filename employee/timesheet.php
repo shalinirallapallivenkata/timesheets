@@ -13,40 +13,66 @@ foreach ($timecode_desc as $time) {
 ?>
 <html>
 <head>
-    <style>
-        th {
-            background-color: steelblue;
-            color: #f1f1f1;
-            font-family: "Calibri Light";
-            font-size: large;
-            text-align: center;
-        }
-        input[type=text]{
-            max-width: 40px;
-            border: #666666 1px solid;
-            display: inline;
-        }
-        input[name=h8]{
-            background-color: #4CAF50;
-            color: #f1f1f1;
-        }
-    </style>
+
+    <script type="text/javascript" src="js/timesheets.js"></script>
+    <link rel="stylesheet" href="css/timesheets.css">
+
 </head>
 <body>
 <h1 align="center"> Time Sheet of <?php
     echo $username ?></h1>
 <div class="container">
+    <div class="hours">
+    <button id="myBtn">ADD HOURS</button></div>
+    <div id="myModal" class="modal">
+
+        <!-- Modal content -->
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h4 id="addhrs">Add Hours</h4>
+            <div class="header">
+            <p class="days">Day(s)</p>
+            <span class="checkbox">
+                <label>
+                    <input type="checkbox" required> Exclude Weekends
+                </label>
+            </span>
+            </div>
+            <br>
+            <div id="container" class="ui-widget">
+                <label for="datepicker1">From: </label>
+                <input id="datepicker1" size="8"/><span id="inlineDate1"></span>
+                <label for="datepicker2">To: </label>
+                <input id="datepicker2" size="8"/><span id="inlineDate2"></span>
+            </div>
+            <div class="paycode">
+                <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">Pay Code
+                    <span class="caret"></span></button>
+                <ul class="dropdown-menu">
+                    <?php
+                    foreach ($time_allocation as $time){ ?>
+                    <li><a href="">
+                            <?php
+                            echo $time;
+                            } ?>
+                        </a></li>
+                </ul>
+            </div>
+            <label for="hrs">Hours: </label>
+            <input id="hrs" type="text" placeholder="8.00" size="3"/>
+            <div class="comments">
+                <label for="cmts">Comments: </label>
+                <input id="cmts" size="20"/>
+            </div>
+        </div>
+    </div>
+
     <table class="table table-hover" style="display: inline">
         <tr>
-            <th>Project</th>
-            <th>Task</th>
-            <th>Mon</th>
-            <th>Tue</th>
-            <th>Wed</th>
-            <th>Thurs</th>
-            <th>Fri</th>
-            <th>Sat</th>
-            <th>Sun</th>
+            <th>Pay Code</th>
+            <th>In</th>
+            <th>Out</th>
+            <th>Hours</th>
             <th>Total</th>
             <th>
                 <div class="col-md-1 col-lg-1">
@@ -57,26 +83,12 @@ foreach ($timecode_desc as $time) {
         <tr>
             <td>
                 <div class="dropdown">
-                    <button class="dropdown-toggle.btn-primary:hover" type="button" data-toggle="dropdown">Project
-                        Selection
-                        <span class="caret"></span></button>
-                    <ul class="dropdown-menu">
-                        <li><a href="1">Project 1</a></li>
-                        <li><a href="2">Project 2</a></li>
-                        <li><a href="3">Project 3</a></li>
-                    </ul>
-                </div>
-            </td>
-            <td>
-                <div class="dropdown">
-                    <button class="dropdown-toggle.btn-primary:hover" type="button" data-toggle="dropdown">Time
+                    <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">Time
                         allocation
                         <span class="caret"></span></button>
                     <ul class="dropdown-menu">
                         <?php
-                        foreach ($time_allocation
-
-                        as $time){ ?>
+                        foreach ($time_allocation as $time){ ?>
                         <li><a href="">
                                 <?php
                                 echo $time;
@@ -88,39 +100,28 @@ foreach ($timecode_desc as $time) {
             <div class="row">
             <td>
                 <div class="col">
-                    <input type="text" placeholder="8.00" name="h" required>
+                    <input type="text" placeholder="8.00" class="hoursentry" name="h" required>
                 </div>
             </td>
             <td><div class="col-sm-3">
-                    <input type="text" placeholder="8.00" name="h" required>
-                </div></td>
-            <td><div class="col-sm-3">
-                    <input type="text" placeholder="8.00" name="h" required>
-                </div></td>
-            <td><div class="col-sm-3">
-                    <input type="text" placeholder="8.00" name="h" required>
-                </div></td>
-            <td><div class="col-sm-3">
-                    <input type="text" placeholder="8.00" name="h" required>
-                </div></td>
-            <td><div class="col-sm-3">
-                    <input type="text"  placeholder="8.00" name="h" required>
-                </div></td>
+                    <input type="text" placeholder="8.00" class="hoursentry" name="h" required>
+                </div>
             <td>
                 <div class="col-sm-3">
-                    <input type="text" placeholder="8.00"  name="h" required>
+                    <input type="text" placeholder="8.00" class="hoursentry" name="h" required>
                 </div></td>
             </td>
 
 
             <td>
                 <div class="col-sm-3" >
-                    <input type="text" name="total">
+                    <input type="text" class="totalhours" name="total">
                 </div></td>
             </td>
             <td>
                 <div class="col-sm-3">
-                    <input type="text" name="maint" onclick=add()>
+                    <a href="#" id="deleterecord">
+                        <span class="glyphicon glyphicon-trash"></span></a>
                 </div></td>
             </td>
             </div>
