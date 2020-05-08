@@ -23,15 +23,15 @@
 }
 
 /* The Close Button */
-.close {
+span.close-modal, span.close-modal2 {
     color: #aaaaaa;
     float: right;
     font-size: 28px;
     font-weight: bold;
 }
 
-.close:hover,
-.close:focus {
+span.close-modal:hover,
+span.close-modal:focus, span.close-modal2:hover, span.close-modal2:focus {
     color: #000;
     text-decoration: none;
     cursor: pointer;
@@ -62,7 +62,6 @@ input[type=text]{
 }
 .checkbox{
     display: inline;
-    padding-bottom: 100px;
 }
 .paycode{
     display: inline;
@@ -73,4 +72,60 @@ input[type=text]{
 }
 .comments{
     padding-top: 50px;
+    padding-bottom: 50px;
 }
+#intime{
+    display: inline;
+}
+.paycode {
+    position: relative;
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    right: 0;
+}
+
+/*UI DATEPICKER*/
+.ui-datepicker th{
+    color: white;
+    background-color:steelblue;
+}
+.ui-datepicker{
+    border-style: solid;
+    border-color: #f1f1f1;
+    background-color:lightgrey;
+    display: none;
+}
+.ui-datepicker-calendar td {
+    padding: 0 7px;
+    text-align: center;
+    line-height: 26px;
+}
+::placeholder{
+    opacity: 0.5;
+}
+.ui-datepicker-calendar .ui-state-default {
+    display: block;
+    width: 26px;
+    outline: none;
+    text-decoration: none;
+    color: black;
+    border: 1px solid transparent;
+}
+.ui-datepicker-prev{
+    padding-right: 220px;
+}
+.ui-datepicker td.ui-state-disabled>span
+{
+    background: white;
+}
+.ui-datepicker td.ui-state-disabled{
+    opacity:100;
+}
+
+.glyphicon-comment{
+    color: steelblue;
+}
+
