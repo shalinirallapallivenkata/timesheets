@@ -37,19 +37,25 @@ $ROLE_MAP = [
     ?>
     <?php if ($user['user_role'] == ROLE_ADMIN): ?>
         <li>
-            <a href="../admin/createemployer.php?username=<?= $_GET['username'] ?>">Create Employer</a>
+            <a href="../admin/createemployer.php?adusername=<?= $_GET['username'] ?>">Create Employer</a>
             <!--        <a href="createemployer.php">Create Employer</a>-->
         </li>
     <?php endif; ?>
     <?php if ($user['user_role'] == ROLE_EMPLOYER): ?>
         <li>
-            <a href="../employer/createemployee.php?username=<?= $_GET['username'] ?>">Create Employee</a>
+            <a href="../employer/createemployee.php?erusername=<?= $_GET['username'] ?>">Create Employee</a>
             <!--        <a href="createemployee.php">Create Employer</a>-->
         </li>
     <?php endif; ?>
-    <?php if ($user['user_role'] == ROLE_EMPLOYER || $user['user_role'] == ROLE_EMPLOYEE): ?>
+    <?php if ($user['user_role'] == ROLE_EMPLOYER): ?>
         <li>
-            <a href="../employee/timesheet.php?username=<?= $_GET['username'] ?>">Timesheet</a>
+            <a href="../employer/employeelist.php?erusername=<?= $_GET['username'] ?>">View Employees</a>
+            <!--        <a href="createemployee.php">Create Employer</a>-->
+        </li>
+    <?php endif; ?>
+    <?php if ($user['user_role'] == ROLE_EMPLOYEE): ?>
+        <li>
+            <a href="../employee/timesheet.php?eeusername=<?= $_GET['username'] ?>">Timesheet</a>
             <!--        <a href="createemployee.php">Create Employer</a>-->
         </li>
     <?php endif; ?>

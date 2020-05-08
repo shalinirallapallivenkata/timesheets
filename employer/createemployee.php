@@ -30,7 +30,15 @@ include_once __DIR__ . "/../app/config.php";
             width: 20%;
             opacity: 0.9;
         }
-
+        label{
+            margin-right:70px;
+            display: inline-block;
+            padding-bottom: 30px;
+            alignment: right;
+        }
+        input[type=button]{
+            margin-right: 70px;
+        }
         .requiredastrix {
             color: red;
         }
@@ -38,9 +46,14 @@ include_once __DIR__ . "/../app/config.php";
     </style>
 </head>
 <body>
-<h1> Create Employee</h1>
-<div class="container">
-<form method="post" action="createemployee-proc.php">
+<?php
+$erusername=$_GET['username'];
+?>
+?>
+<h1> Create Employee by <?= strtoupper($erusername)?></h1>
+<div class="container" style="display: inline">
+<form method="post" action="createemployee-proc.php" autocomplete="off">
+    <input type="hidden" name="username" value="<?=$erusername?>">
     <div class="row-md-12">
         <div class="col-md-6">
             <label><span class="requiredastrix">*</span> First Name:</label>
@@ -52,7 +65,16 @@ include_once __DIR__ . "/../app/config.php";
             <label><span class="requiredastrix">*</span>Last Name:</label>
             <input type="text" name="lastname" required>
             <br>
-            <input type="button" class="cancelbtn" value="Cancel">
+            <label>Start Date:</label>
+            <input type="date" name="startdate" style="font-size:15px">
+            <br>
+            <label>Employer Name:</label>
+            <input type="text" name="employername" value="<?=$erusername?>">
+            <br>
+            <input type="submit" value="Submit">
+
+
+
         </div>
         <div class="col-md-6">
 
@@ -65,7 +87,10 @@ include_once __DIR__ . "/../app/config.php";
             <label><span class="requiredastrix">*</span>Email</label>
             <input type="email" name="employeremail" required>
             <br>
-            <input type="submit" value="Submit">
+            <label>Start Time:</label>
+            <input type="time" name="starttime" style="font-size: 15px" ><br>
+            <input type="button" class="cancelbtn" value="Cancel">
+
         </div>
 
 
