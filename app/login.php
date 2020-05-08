@@ -50,6 +50,9 @@
                 <input class ="btn btn-default" type="submit" value="Submit">
                 <input class="btn btn-default" type="submit" value="Cancel">
                 <br>
+
+
+
                 <a href="Register">Register Employer/Employee</a>
                 <a href="Forgot Password"> Forgot Password</a>
 
