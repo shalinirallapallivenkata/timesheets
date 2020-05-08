@@ -1,0 +1,131 @@
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+}
+
+/* The Close Button */
+span.close-modal, span.close-modal2 {
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+span.close-modal:hover,
+span.close-modal:focus, span.close-modal2:hover, span.close-modal2:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+th {
+    background-color: steelblue;
+    color: #f1f1f1;
+    font-family: "Calibri Light";
+    font-size: large;
+    text-align: center;
+}
+input[type=text]{
+    max-width: 40px;
+    border: #666666 1px solid;
+    display: inline;
+}
+.hours{
+    padding-bottom: 30px;
+}
+#addhrs{
+    padding-bottom: 10px;
+}
+.days{
+    display: inline;
+    margin-right: 100px;
+    padding-bottom: 300px;
+}
+.checkbox{
+    display: inline;
+}
+.paycode{
+    display: inline;
+    padding-right: 45px;
+}
+.ui-widget{
+    padding-bottom: 50px;
+}
+.comments{
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+#intime{
+    display: inline;
+}
+.paycode {
+    position: relative;
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    right: 0;
+}
+
+/*UI DATEPICKER*/
+.ui-datepicker th{
+    color: white;
+    background-color:steelblue;
+}
+.ui-datepicker{
+    border-style: solid;
+    border-color: #f1f1f1;
+    background-color:lightgrey;
+    display: none;
+}
+.ui-datepicker-calendar td {
+    padding: 0 7px;
+    text-align: center;
+    line-height: 26px;
+}
+::placeholder{
+    opacity: 0.5;
+}
+.ui-datepicker-calendar .ui-state-default {
+    display: block;
+    width: 26px;
+    outline: none;
+    text-decoration: none;
+    color: black;
+    border: 1px solid transparent;
+}
+.ui-datepicker-prev{
+    padding-right: 220px;
+}
+.ui-datepicker td.ui-state-disabled>span
+{
+    background: white;
+}
+.ui-datepicker td.ui-state-disabled{
+    opacity:100;
+}
+
+.glyphicon-comment{
+    color: steelblue;
+}
+
